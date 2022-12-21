@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KillCitizen : MonoBehaviour
 {
+    public GameObject blood;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,10 @@ public class KillCitizen : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enter");
-        Destroy(collision.gameObject);
+        Instantiate(blood, transform.position, Quaternion.identity);
+        Destroy(collision.gameObject); //destroys the "Citizen"
+        GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(100); //refers to "GameManager" and adds score to the score counter
     }
+
+    
 }
