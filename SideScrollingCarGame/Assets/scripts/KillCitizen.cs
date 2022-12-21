@@ -19,6 +19,7 @@ public class KillCitizen : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("enter");
         Instantiate(blood, transform.position, Quaternion.identity);
         Destroy(collision.gameObject); //destroys the "Citizen"
         GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(100); //refers to "GameManager" and adds score to the score counter
