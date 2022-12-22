@@ -1,11 +1,13 @@
 using System.Collections;
+using UnityEngine.Audio;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class KillCitizen : MonoBehaviour
 {
     public GameObject blood;
-    public AudioSource[] souundFX;
+    public AudioSource[] soundFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class KillCitizen : MonoBehaviour
         Destroy(collision.gameObject); //destroys the "Citizen"
         GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(100); //refers to "GameManager" and adds score to the score counter
 
-        souundFX[0].Play();
+        soundFX[0].Play();
     }
 
     
