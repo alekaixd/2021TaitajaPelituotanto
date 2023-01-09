@@ -8,6 +8,8 @@ public class KillCitizen : MonoBehaviour
 {
     public GameObject blood;
     public AudioSource naurua;
+    public GameObject explosion;
+    public AudioSource boomSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,9 @@ public class KillCitizen : MonoBehaviour
     {
         if(collision.CompareTag("Enemy") == true)
         {
+            boomSound.play();
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
             Destroy(collision.gameObject); //destroys the "Citizen"
         }
         else
