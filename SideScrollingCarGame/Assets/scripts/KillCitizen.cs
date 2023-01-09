@@ -25,9 +25,9 @@ public class KillCitizen : MonoBehaviour
         Debug.Log("enter");
         naurua.Play();
         Instantiate(blood, transform.position, Quaternion.identity);
+        GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(5); //refers to "GameManager" and adds score to the score counter
+        Debug.Log("adding score");
         Destroy(collision.gameObject); //destroys the "Citizen"
-        GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(100); //refers to "GameManager" and adds score to the score counter
-
     }
 
     

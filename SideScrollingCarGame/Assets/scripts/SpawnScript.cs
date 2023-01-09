@@ -22,11 +22,9 @@ public class SpawnScript : MonoBehaviour
     private IEnumerator SpawnEnemy(float interval)
     {
         yield return new WaitForSeconds(interval);
-        Debug.Log("spawning citizen");
         int randomSpawnpoint = Random.Range(0, spawnPoints.Length);
         int randomCitizen = Random.Range(0, enemyPrefabs.Length);
         Instantiate(enemyPrefabs[randomCitizen], spawnPoints[randomSpawnpoint]);
-        Debug.Log("Ceitizen spawned");
         StartCoroutine(SpawnEnemy(Random.Range(1, 3)));
     }
 }

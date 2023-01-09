@@ -9,7 +9,6 @@ public class TMPcontroller : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        scoreText.text = "Blood Splattered: " + score;
-        Debug.Log("updated score!");
+        scoreText.text = "Blood Splattered: " + score + "L";
     }
 }
