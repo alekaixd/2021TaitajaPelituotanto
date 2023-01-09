@@ -20,5 +20,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int score) // adds score
     {
         gameScore += score;
+        Debug.Log("added score: " + gameScore);
+        GameObject.Find("ScoreText").GetComponent<TMPcontroller>().UpdateScore(gameScore);
     }
 }
