@@ -22,12 +22,18 @@ public class KillCitizen : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("enter");
-        naurua.Play();
-        Instantiate(blood, transform.position, Quaternion.identity);
-        GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(5); //refers to "GameManager" and adds score to the score counter
-        Debug.Log("adding score");
-        Destroy(collision.gameObject); //destroys the "Citizen"
+        if(collision.CompareTag("Enemy") == true)
+        {
+            Destroy(collision.gameObject); //destroys the "Citizen"
+        }
+        else
+        {
+            naurua.Play();
+            Instantiate(blood, transform.position, Quaternion.identity);
+            GameObject.Find("GameManager").GetComponent<GameManager>().AddScore(5); //refers to "GameManager" and adds score to the score counter
+            Debug.Log("adding score");
+            Destroy(collision.gameObject); //destroys the "Citizen"
+        }
     }
 
     

@@ -2124,5 +2124,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomba
       objectReference: {fileID: 0}
+    - target: {fileID: 3545713450323737468, guid: 7adc815eff00bca418d8289fc3379f53, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7adc815eff00bca418d8289fc3379f53, type: 3}
