@@ -9,7 +9,6 @@ public class KillCitizen : MonoBehaviour
     public GameObject blood;
     public AudioSource naurua;
     public GameObject explosion;
-    public AudioSource boomSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +26,11 @@ public class KillCitizen : MonoBehaviour
         Debug.Log(collision);
         if (collision.CompareTag("Enemy") == true)
         {
-            boomSound.Play();
+            
             Instantiate(explosion, transform.position, Quaternion.identity);
             GameObject.Find("GameManager").GetComponent<GameManager>().GameOver(false);
             Destroy(collision.gameObject); //destroys the "Citizen"
+            gameObject.SetActive(false);
         }
         else if (collision.CompareTag("Citizen") == true)
         {
@@ -42,10 +42,9 @@ public class KillCitizen : MonoBehaviour
         }
         else
         {
-            boomSound.Play();
             Instantiate(explosion, transform.position, Quaternion.identity);
             GameObject.Find("GameManager").GetComponent<GameManager>().GameOver(true);
-            Destroy(gameObject); //destroys the car
+            gameObject.SetActive(false); //destroys the car
         }
     }
 

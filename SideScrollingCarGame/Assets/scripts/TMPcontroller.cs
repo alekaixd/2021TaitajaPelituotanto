@@ -9,6 +9,6 @@ public class TMPcontroller : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        scoreText.text = "Blood Splattered: " + score + "L";
+        scoreText.text = "Blood Splattered: " + score + "L"; //changes UI text
     }
 }

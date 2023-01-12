@@ -6,6 +6,7 @@ public class SpawnScript : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPoints;
+    public bool spawningObjects = true;
     
     // Start is called before the first frame update
     void Start()
@@ -21,10 +22,13 @@ public class SpawnScript : MonoBehaviour
 
     private IEnumerator SpawnEnemy(float interval)
     {
-        yield return new WaitForSeconds(interval);
-        int randomSpawnpoint = Random.Range(0, spawnPoints.Length);
-        int randomCitizen = Random.Range(0, enemyPrefabs.Length);
-        Instantiate(enemyPrefabs[randomCitizen], spawnPoints[randomSpawnpoint]);
-        StartCoroutine(SpawnEnemy(Random.Range(1, 3)));
+        if(spawningObjects == true)
+        {
+            yield return new WaitForSeconds(interval);
+            int randomSpawnpoint = Random.Range(0, spawnPoints.Length);
+            int randomCitizen = Random.Range(0, enemyPrefabs.Length);
+            Instantiate(enemyPrefabs[randomCitizen], spawnPoints[randomSpawnpoint]);
+            StartCoroutine(SpawnEnemy(Random.Range(1, 3)));
+        }
     }
 }
