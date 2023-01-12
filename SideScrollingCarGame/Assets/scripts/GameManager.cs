@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("moottorinaani").SetActive(false);
         boomSound.Play();
 
-        StartCoroutine(WaitUntilChange(3.0f));
+        StartCoroutine(WaitUntilChange(2.0f));
     }
 
     private IEnumerator WaitUntilChange(float time)
