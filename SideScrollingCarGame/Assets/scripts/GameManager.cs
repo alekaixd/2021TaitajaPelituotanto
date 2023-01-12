@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public int gameScore = 0;
     public AudioSource boomSound;
+    public GameObject explosion;
 
     // Start is called before the first frame update
     public void AddScore(int score) // adds score
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("taustamusiikki").SetActive(false);
         GameObject.Find("moottorinaani").SetActive(false);
         boomSound.Play();
+        Instantiate(explosion, GameObject.Find("Player").transform.position, Quaternion.identity);
 
         StartCoroutine(WaitUntilChange(2.0f));
     }

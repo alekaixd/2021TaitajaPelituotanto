@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameScore: 0
   boomSound: {fileID: 136453737}
+  explosion: {fileID: 1728701270913790627, guid: ab03e7d6c42a1cc49bf4f80498976a7d, type: 3}
 --- !u!4 &136453736
 Transform:
   m_ObjectHideFlags: 0
@@ -731,7 +732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blood: {fileID: 2981003012191465917, guid: ed934d9a63139cc44afdd4e36d8756a0, type: 3}
   naurua: {fileID: 730165575}
-  explosion: {fileID: 1728701270913790627, guid: ab03e7d6c42a1cc49bf4f80498976a7d, type: 3}
 --- !u!82 &730165575
 AudioSource:
   m_ObjectHideFlags: 0
